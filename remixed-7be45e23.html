@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dental Care – Clínica de Especialidades Odontológicas · Morelia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#0a7c6e;--teal-l:#12a08f;--teal-p:#e8f5f3;
+  --cream:#faf8f4;--dark:#111a18;--text:#3a4a47;
+  --muted:#7a9090;--border:#d5e5e2;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(250,248,244,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--teal)}
+.nav-logo span{font-weight:300;font-style:italic;color:#2e4040}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{text-decoration:none;font-size:12px;font-weight:400;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--teal)!important;color:#fff!important;padding:10px 22px;border-radius:100px;font-weight:500!important}
+.nav-cta:hover{background:var(--teal-l)!important}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 72px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--teal-p);color:var(--teal);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:32px;width:fit-content}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,64px);font-weight:300;line-height:1.1;color:var(--dark);margin-bottom:24px}
+.hero-title em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:15px;font-weight:300;color:var(--muted);line-height:1.7;max-width:400px;margin-bottom:44px}
+.hero-actions{display:flex;gap:16px;align-items:center}
+.btn-primary{background:var(--teal);color:#fff;padding:14px 32px;border-radius:100px;font-size:13px;font-weight:500;letter-spacing:.05em;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-primary:hover{background:var(--teal-l);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,124,110,.25)}
+.btn-ghost{color:var(--teal);font-size:13px;font-weight:500;text-decoration:none;transition:all .2s}
+.btn-ghost:hover{letter-spacing:.02em}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid var(--border)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--teal);line-height:1}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px;font-weight:300}
+
+.hero-right{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--teal-p),#c8ebe6)}
+.hero-visual{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.ring-wrap{width:280px;height:280px;position:relative}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(10,124,110,.18)}
+.ring:nth-child(1){inset:0;animation:spin 20s linear infinite}
+.ring:nth-child(2){inset:22px;animation:spin 15s linear infinite reverse}
+.ring:nth-child(3){inset:44px;animation:spin 25s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.center-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:110px;height:110px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:48px;box-shadow:0 20px 60px rgba(10,124,110,.2)}
+.badge{position:absolute;background:#fff;border-radius:14px;padding:10px 16px;box-shadow:0 8px 28px rgba(0,0,0,.1);font-size:12px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:8px}
+.badge .ic{font-size:16px}
+.b1{top:16%;right:6%;animation:fl 4s ease-in-out infinite}
+.b2{bottom:20%;left:4%;animation:fl 4s 1.5s ease-in-out infinite}
+.b3{top:52%;right:4%;animation:fl 4s .8s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* SERVICES */
+.services{padding:100px 72px;background:#fff}
+.section-hd{text-align:center;margin-bottom:64px}
+.section-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:300;color:var(--dark);line-height:1.2}
+.section-title em{font-style:italic;color:var(--teal)}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto}
+.srv-card{padding:36px 30px;border:1px solid var(--border);border-radius:20px;background:var(--cream);transition:all .3s;cursor:default}
+.srv-card:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 16px 48px rgba(10,124,110,.1);background:#fff}
+.srv-icon{font-size:30px;margin-bottom:18px}
+.srv-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--dark);margin-bottom:8px}
+.srv-desc{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* WHY */
+.why{padding:100px 72px;background:var(--dark);color:#fff;position:relative;overflow:hidden}
+.why::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(10,124,110,.15),transparent 70%);pointer-events:none}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1000px;margin:0 auto}
+.why-left .section-title{color:#fff}
+.why-left .section-tag{color:#12a08f}
+.why-text{font-size:15px;color:rgba(255,255,255,.5);line-height:1.8;font-weight:300;margin-top:18px}
+.feat-list{display:flex;flex-direction:column;gap:18px}
+.feat{display:flex;gap:14px;align-items:flex-start;padding:18px 22px;border-radius:16px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03);transition:all .2s}
+.feat:hover{border-color:rgba(10,124,110,.4);background:rgba(10,124,110,.08)}
+.feat-dot{width:36px;height:36px;border-radius:10px;background:rgba(10,124,110,.2);border:1px solid rgba(10,124,110,.3);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.feat-text strong{display:block;font-size:14px;font-weight:500;color:#fff;margin-bottom:3px}
+.feat-text span{font-size:12px;color:rgba(255,255,255,.4);font-weight:300}
+
+/* HOURS */
+.hours{padding:80px 72px;background:var(--teal-p)}
+.hours-inner{max-width:680px;margin:0 auto;text-align:center}
+.hr-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:40px}
+.hr-row{display:flex;justify-content:space-between;align-items:center;padding:13px 18px;border-radius:12px;background:#fff;font-size:13px}
+.hr-day{font-weight:500;color:var(--dark)}
+.hr-open{color:var(--teal)}
+.hr-closed{color:var(--muted)}
+
+/* CONTACT */
+.contact{padding:100px 72px;background:#fff}
+.contact-inner{max-width:560px;margin:0 auto;text-align:center}
+.ct-list{display:flex;flex-direction:column;gap:14px;margin-top:40px}
+.ct-item{display:flex;align-items:center;gap:16px;padding:16px 22px;border:1px solid var(--border);border-radius:14px;text-align:left;transition:all .2s}
+.ct-item:hover{border-color:var(--teal);background:var(--teal-p)}
+.ct-icon{width:40px;height:40px;border-radius:12px;background:var(--teal-p);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ct-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.ct-value{font-size:14px;color:var(--dark);font-weight:500;margin-top:2px}
+
+/* FOOTER */
+footer{padding:28px 72px;background:var(--dark);display:flex;align-items:center;justify-content:space-between}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff;font-weight:300}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.3)}
+
+/* CHATBOT */
+.fab-wrap{position:fixed;bottom:28px;right:28px;z-index:300}
+.fab{width:58px;height:58px;border-radius:50%;background:var(--teal);border:none;cursor:pointer;font-size:22px;box-shadow:0 8px 28px rgba(10,124,110,.4);transition:transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center}
+.fab:hover{transform:scale(1.08);box-shadow:0 12px 36px rgba(10,124,110,.5)}
+.chat-win{position:fixed;bottom:100px;right:28px;width:350px;height:500px;background:#fff;border-radius:22px;box-shadow:0 24px 80px rgba(0,0,0,.18);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--border);animation:su .3s ease}
+@keyframes su{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+.ch-head{padding:16px 18px;background:var(--teal);color:#fff;display:flex;align-items:center;gap:12px}
+.ch-av{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:15px}
+.ch-title{font-size:14px;font-weight:500}
+.ch-sub{font-size:11px;opacity:.7;margin-top:1px}
+.ch-x{margin-left:auto;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;opacity:.7;line-height:1;padding:0}
+.ch-x:hover{opacity:1}
+.ch-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.ch-msgs::-webkit-scrollbar{width:3px}
+.ch-msgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.m-row{display:flex;gap:7px;animation:fu .2s ease}
+.m-row.u{flex-direction:row-reverse}
+@keyframes fu{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.m-av{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;margin-top:2px}
+.m-av.bot{background:var(--teal-p);color:var(--teal);font-size:12px}
+.m-av.usr{background:#eee;color:#888}
+.bub{max-width:76%;padding:8px 12px;border-radius:13px;font-size:13px;line-height:1.5;font-weight:300}
+.bub.bot{background:var(--teal-p);color:var(--dark);border-top-left-radius:3px}
+.bub.user{background:var(--teal);color:#fff;border-top-right-radius:3px}
+.dots{display:flex;gap:3px;align-items:center;padding:4px 2px}
+.dots span{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:bo 1.2s infinite}
+.dots span:nth-child(2){animation-delay:.15s}
+.dots span:nth-child(3){animation-delay:.3s}
+@keyframes bo{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.chip{background:none;border:1px solid var(--border);color:var(--teal);border-radius:20px;padding:5px 11px;font-size:11px;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
+.chip:hover{background:var(--teal-p);border-color:var(--teal)}
+.ch-foot{display:flex;gap:8px;padding:10px 14px;border-top:1px solid var(--border)}
+.ch-inp{flex:1;background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:9px 12px;font-size:13px;font-family:'Outfit',sans-serif;color:var(--dark);outline:none;resize:none;line-height:1.4}
+.ch-inp:focus{border-color:var(--teal)}
+.ch-inp::placeholder{color:var(--muted)}
+.ch-send{width:34px;height:34px;border-radius:9px;background:var(--teal);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;align-self:flex-end;transition:all .15s}
+.ch-send:hover{background:var(--teal-l);transform:scale(1.05)}
+.ch-send:disabled{opacity:.3;cursor:not-allowed;transform:none}
+.ch-send svg{fill:#fff;width:13px;height:13px}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:60px 24px}
+  .services,.why,.hours,.contact{padding:60px 24px}
+  .srv-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr;gap:40px}
+  .hr-grid{grid-template-columns:1fr}
+  footer{padding:20px 24px;flex-direction:column;gap:10px;text-align:center}
+  .chat-win{right:12px;left:12px;width:auto;bottom:88px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Dental <span>Care</span></div>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#horarios">Horarios</a>
+    <a href="#contacto">Contacto</a>
+    <a href="tel:4436885454" class="nav-cta">Agendar Cita</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Morelia, Michoacán</div>
+    <h1 class="hero-title">Tu sonrisa,<br>nuestra <em>especialidad</em></h1>
+    <p class="hero-sub">Clínica de Especialidades Odontológicas con atención personalizada y profesional. Tecnología de vanguardia al servicio de tu salud bucal.</p>
+    <div class="hero-actions">
+      <a href="tel:4436885454" class="btn-primary">Agendar Cita</a>
+      <a href="#servicios" class="btn-ghost" onclick="smoothScroll(event,'servicios')">Ver servicios →</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">5.0⭐</div><div class="stat-label">Google Reviews</div></div>
+      <div><div class="stat-num">31</div><div class="stat-label">Pacientes satisfechos</div></div>
+      <div><div class="stat-num">6+</div><div class="stat-label">Especialidades</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="ring-wrap">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="center-icon">🦷</div>
+      </div>
+      <div class="badge b1"><span class="ic">✅</span> 5 estrellas</div>
+      <div class="badge b2"><span class="ic">📅</span> Cita en minutos</div>
+      <div class="badge b3"><span class="ic">♿</span> Accesible</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="section-hd">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Especialidades a tu <em>disposición</em></h2>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card"><div class="srv-icon">🦷</div><div class="srv-name">Ortodoncia</div><div class="srv-desc">Brackets metálicos y estéticos, alineadores transparentes para una sonrisa perfecta.</div></div>
+    <div class="srv-card"><div class="srv-icon">✨</div><div class="srv-name">Blanqueamiento</div><div class="srv-desc">Tratamientos profesionales para una sonrisa más brillante y radiante.</div></div>
+    <div class="srv-card"><div class="srv-icon">🔩</div><div class="srv-name">Implantes Dentales</div><div class="srv-desc">Soluciones permanentes para dientes perdidos con implantes de alta calidad.</div></div>
+    <div class="srv-card"><div class="srv-icon">👶</div><div class="srv-name">Odontopediatría</div><div class="srv-desc">Atención especializada y amigable para los más pequeños de la familia.</div></div>
+    <div class="srv-card"><div class="srv-icon">🔬</div><div class="srv-name">Endodoncia</div><div class="srv-desc">Tratamiento de conductos con tecnología avanzada y mínimo dolor.</div></div>
+    <div class="srv-card"><div class="srv-icon">🧹</div><div class="srv-name">Limpieza Dental</div><div class="srv-desc">Profilaxis profesional para mantener tu salud bucal en óptimas condiciones.</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="nosotros">
+  <div class="why-grid">
+    <div class="why-left">
+      <div class="section-tag">¿Por qué elegirnos?</div>
+      <h2 class="section-title">Excelencia en <em>cada visita</em></h2>
+      <p class="why-text">En Dental Care nos distinguimos por brindar atención personal y profesional de primer nivel. Cada paciente es único y merece el mejor cuidado.</p>
+    </div>
+    <div class="feat-list">
+      <div class="feat"><div class="feat-dot">⭐</div><div class="feat-text"><strong>5.0 en Google</strong><span>31 pacientes avalan nuestra calidad</span></div></div>
+      <div class="feat"><div class="feat-dot">👨‍👩‍👧</div><div class="feat-text"><strong>Para toda la familia</strong><span>Atención a niños y adultos</span></div></div>
+      <div class="feat"><div class="feat-dot">💳</div><div class="feat-text"><strong>Múltiples formas de pago</strong><span>Tarjeta crédito, débito y NFC</span></div></div>
+      <div class="feat"><div class="feat-dot">♿</div><div class="feat-text"><strong>Totalmente accesible</strong><span>Instalaciones adaptadas para todos</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="hours" id="horarios">
+  <div class="hours-inner">
+    <div class="section-tag">Horarios</div>
+    <h2 class="section-title">Cuándo <em>visitarnos</em></h2>
+    <div class="hr-grid">
+      <div class="hr-row"><span class="hr-day">Lunes</span><span class="hr-open">10:00 AM – 8:00 PM</span></div>
+      <div class="hr-row"><span class="hr-day">Martes</span><span class="hr-open">10:00 AM – 8:00 PM</span></div>
+      <div class="hr-row"><span class="hr-day">Miércoles</span><span class="hr-open">10:00 AM – 8:00 PM</span></div>
+      <div class="hr-row"><span class="hr-day">Jueves</span><span class="hr-open">10:00 AM – 8:00 PM</span></div>
+      <div class="hr-row"><span class="hr-day">Viernes</span><span class="hr-open">10:00 AM – 8:00 PM</span></div>
+      <div class="hr-row"><span class="hr-day">Sábado</span><span class="hr-closed">Cerrado</span></div>
+      <div class="hr-row"><span class="hr-day">Domingo</span><span class="hr-closed">Cerrado</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="contact-inner">
+    <div class="section-tag">Contacto</div>
+    <h2 class="section-title">Agenda tu <em>cita hoy</em></h2>
+    <div class="ct-list">
+      <div class="ct-item"><div class="ct-icon">📍</div><div><div class="ct-label">Dirección</div><div class="ct-value">Insurgentes 182, Lomas de Hidalgo, Morelia, Mich.</div></div></div>
+      <div class="ct-item"><div class="ct-icon">🕐</div><div><div class="ct-label">Horario</div><div class="ct-value">Lunes a Viernes · 10:00 AM – 8:00 PM</div></div></div>
+      <div class="ct-item"><div class="ct-icon">📞</div><div><div class="ct-label">Teléfono</div><div class="ct-value"><a href="tel:4436885454" style="color:var(--dark);text-decoration:none;font-weight:500">(443) 688-5454</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">Dental Care · Morelia</div>
+  <div class="ft-copy">© 2025 · Clínica de Especialidades Odontológicas</div>
+</footer>
+
+<!-- CHATBOT -->
+<div class="fab-wrap">
+  <div id="chatWin" class="chat-win" style="display:none">
+    <div class="ch-head">
+      <div class="ch-av">🦷</div>
+      <div><div class="ch-title">Asistente Dental Care</div><div class="ch-sub">En línea · responde al instante</div></div>
+      <button class="ch-x" onclick="toggleChat()">×</button>
+    </div>
+    <div class="ch-msgs" id="chatMsgs"></div>
+    <div class="chips" id="chipArea">
+      <button class="chip" onclick="sendChip(this)">¿Cuáles son sus horarios?</button>
+      <button class="chip" onclick="sendChip(this)">Quiero agendar una cita</button>
+      <button class="chip" onclick="sendChip(this)">¿Aceptan tarjeta?</button>
+      <button class="chip" onclick="sendChip(this)">¿Dónde están ubicados?</button>
+    </div>
+    <div class="ch-foot">
+      <textarea class="ch-inp" id="chatInput" placeholder="Escribe tu pregunta..." rows="1" onkeydown="handleKey(event)"></textarea>
+      <button class="ch-send" id="sendBtn" onclick="sendMsg()" disabled>
+        <svg viewBox="0 0 24 24"><path d="M2 21L23 12 2 3v7l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="fab" id="fabBtn" onclick="toggleChat()">💬</button>
+</div>
+
+<script>
+function smoothScroll(e, id) {
+  e.preventDefault();
+  document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+}
+
+const SYSTEM = `Eres el asistente virtual de Dental Care, Clínica de Especialidades Odontológicas en Insurgentes 182, Lomas de Hidalgo, 58240 Morelia, Michoacán.
+
+Horarios: Lunes a Viernes 10:00 AM – 8:00 PM. Sábado y Domingo cerrado.
+Se requiere cita previa. Pagos: tarjeta crédito, débito y NFC.
+Accesibilidad total para sillas de ruedas.
+Calificación: 5.0 estrellas, 31 reseñas en Google.
+Atienden niños y adultos.
+Especialidades: ortodoncia, blanqueamiento, implantes, endodoncia, odontopediatría, limpieza dental, periodoncia, prótesis.
+
+Sé amable, breve y directo. Máximo 3 oraciones. Si no sabes algo específico, indica que contacten a la clínica directamente. Responde siempre en español.
+
+IMPORTANTE: Si el usuario quiere agendar una cita o pregunta cómo hacerlo, responde SIEMPRE con este formato exacto:
+"¡Con gusto! Para agendar tu cita llámanos al 📞 **443 688-5454**. Atendemos de lunes a viernes de 10:00 AM a 8:00 PM. ¡Te esperamos! 😊"`;
+
+let history = [{ role: "assistant", content: "¡Hola! 😊 Bienvenido a Dental Care. Soy tu asistente virtual, ¿en qué puedo ayudarte hoy?" }];
+let isOpen = false;
+
+function toggleChat() {
+  isOpen = !isOpen;
+  const win = document.getElementById('chatWin');
+  const fab = document.getElementById('fabBtn');
+  win.style.display = isOpen ? 'flex' : 'none';
+  fab.textContent = isOpen ? '✕' : '💬';
+  if (isOpen && document.getElementById('chatMsgs').children.length === 0) renderAll();
+}
+
+function renderAll() {
+  const box = document.getElementById('chatMsgs');
+  box.innerHTML = '';
+  history.forEach(m => appendBubble(m.role, m.content));
+}
+
+function appendBubble(role, text) {
+  const box = document.getElementById('chatMsgs');
+  const row = document.createElement('div');
+  row.className = 'm-row' + (role === 'user' ? ' u' : '');
+  row.innerHTML = `<div class="m-av ${role === 'user' ? 'usr' : 'bot'}">${role === 'user' ? 'Tú' : '🦷'}</div><div class="bub ${role === 'user' ? 'user' : 'bot'}">${text}</div>`;
+  box.appendChild(row);
+  box.scrollTop = box.scrollHeight;
+}
+
+function showTyping() {
+  const box = document.getElementById('chatMsgs');
+  const row = document.createElement('div');
+  row.className = 'm-row'; row.id = 'typing';
+  row.innerHTML = `<div class="m-av bot">🦷</div><div class="bub bot"><div class="dots"><span></span><span></span><span></span></div></div>`;
+  box.appendChild(row);
+  box.scrollTop = box.scrollHeight;
+}
+
+function removeTyping() { document.getElementById('typing')?.remove(); }
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
+}
+
+document.getElementById('chatInput').addEventListener('input', function() {
+  document.getElementById('sendBtn').disabled = !this.value.trim();
+});
+
+function sendChip(btn) {
+  document.getElementById('chipArea').style.display = 'none';
+  send(btn.textContent);
+}
+
+function sendMsg() {
+  const inp = document.getElementById('chatInput');
+  const text = inp.value.trim();
+  if (!text) return;
+  inp.value = '';
+  document.getElementById('sendBtn').disabled = true;
+  document.getElementById('chipArea').style.display = 'none';
+  send(text);
+}
+
+async function send(text) {
+  history.push({ role: 'user', content: text });
+  appendBubble('user', text);
+  showTyping();
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYSTEM,
+        messages: history.map(m => ({ role: m.role, content: m.content }))
+      })
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || 'Lo siento, intenta de nuevo.';
+    removeTyping();
+    history.push({ role: 'assistant', content: reply });
+    appendBubble('assistant', reply);
+  } catch {
+    removeTyping();
+    appendBubble('assistant', 'Hubo un problema de conexión. Por favor contáctanos directamente.');
+  }
+}
+</script>
+</body>
+</html>
